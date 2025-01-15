@@ -1,0 +1,92 @@
+<RifornimentoApp>:
+    orientation: 'vertical'
+    padding: 10
+    spacing: 10
+    BoxLayout:
+        orientation: 'horizontal'
+        Label:
+            text: 'Nome:'
+            color: 0, 0, 1, 1  # Blu
+        TextInput:
+            id: nome
+            background_color: 1, 1, 1, 1  # Bianco
+    BoxLayout:
+        orientation: 'horizontal'
+        Label:
+            text: 'Cantiere:'
+            color: 0, 0, 1, 1  # Blu
+        TextInput:
+            id: cantiere
+            background_color: 1, 1, 1, 1  # Bianco
+    BoxLayout:
+        orientation: 'horizontal'
+        Label:
+            text: 'Targa:'
+            color: 0, 0, 1, 1  # Blu
+        TextInput:
+            id: targa
+            background_color: 1, 1, 1, 1  # Bianco
+    BoxLayout:
+        orientation: 'horizontal'
+        Label:
+            text: 'Fonte:'
+            color: 0, 0, 1, 1  # Blu
+        TextInput:
+            id: fonte
+            background_color: 1, 1, 1, 1  # Bianco
+    BoxLayout:
+        orientation: 'horizontal'
+        Label:
+            text: 'Destinazione:'
+            color: 0, 0, 1, 1  # Blu
+        TextInput:
+            id: destinazione
+            background_color: 1, 1, 1, 1  # Bianco
+    BoxLayout:
+        orientation: 'horizontal'
+        Label:
+            text: 'Litri:'
+            color: 0, 0, 1, 1  # Blu
+        TextInput:
+            id: litri
+            background_color: 1, 1, 1, 1  # Bianco
+    BoxLayout:
+        orientation: 'horizontal'
+        Label:
+            text: 'Km/Ore:'
+            color: 0, 0, 1, 1  # Blu
+        TextInput:
+            id: km
+            background_color: 1, 1, 1, 1  # Bianco
+    BoxLayout:
+        orientation: 'horizontal'
+        Label:
+            text: 'Note:'
+            color: 0, 0, 1, 1  # Blu
+        TextInput:
+            id: note
+            background_color: 1, 1, 1, 1  # Bianco
+    BoxLayout:
+        orientation: 'horizontal'
+        Button:
+            text: 'Aggiungi Rifornimento'
+            background_color: 0, 1, 0, 1  # Verde
+            on_press: root.aggiungi_rifornimento(nome.text, cantiere.text, targa.text, fonte.text, destinazione.text, litri.text, km.text, note.text)
+        Button:
+            text: 'Mostra Dati'
+            background_color: 0, 0, 1, 1  # Blu
+            on_press: print(root.mostra_dati())
+
+<SuccessPopup@Popup>:
+    title: 'Successo'
+    size_hint: 0.6, 0.4
+    auto_dismiss: True
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'Rifornimento aggiunto con successo!'
+        Button:
+            text: 'OK'
+            size_hint_y: None
+            height: '40dp'
+            on_press: root.dismiss()
